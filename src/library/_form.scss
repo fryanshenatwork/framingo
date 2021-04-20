@@ -1,5 +1,5 @@
 @import '../config';
-@import '../utilities/variables';
+@import '../utility/variables';
 @import './loading';
 
 .#{$passphrase} {
@@ -35,7 +35,7 @@
       border-radius: setting(inputRadius);
     }
     %input-border {
-      border: setting(inputBorderWidth) solid setting(inputBorderColor);
+      border: setting(inputBorderWidth) solid transparent;
       outline: 0;
       @include light {
         border-color: $color-light-borderColor;

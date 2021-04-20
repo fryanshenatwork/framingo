@@ -1,5 +1,5 @@
 @import '../config';
-@import '../utilities/index';
+@import '../utility/index';
 @import './animate';
 
 %fr-loading-background {
@@ -10,9 +10,9 @@
   display: block;
   width: 100%;
   height: 100%;
-  background: fade-out($color-light-background, .1);
+  background: fade-out(color(background), .1);
   @include dark {
-    background: fade-out($color-dark-background, .1);
+    background: fade-out(color(background, d), .1);
   }
 }
 

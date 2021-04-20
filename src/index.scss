@@ -1,29 +1,8 @@
-@import './config';
-@import './utilities/index';
-@import './library/index';
-
-body {
-  @include light {
-    background: color(background, light);
-  }
-  @include dark {
-    background: color(background, dark);
-  }
-
-  #app {
-    .container {
-      @include light {
-        background: color(contentBackground);
-      }
-      @include dark {
-        background: color(contentBackground, dark);
-      }
-    }
-  }
-
-  input, button {
-    &, &:hover, &:visited, &:focus {
-      outline: 0;
-    }
-  }
+// @import './config';
+$color-light-map: map-get($colors, 'light') !default;
+$color-dark-map: '' !default;
+@if map-has-key($colors, 'dark') {
+  $color-dark-map: map-get($colors, 'dark');
 }
+@import './utility/index';
+@import './library/index';
