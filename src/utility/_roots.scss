@@ -2,7 +2,7 @@
   @each $colorKey, $colorValue in $color-light-map {
     @if map-has-key($color-dark-map, $colorKey) {
       $darkColor: map-get($color-dark-map, $colorKey);
-      --fr-color-#{$colorKey}: #{$darkColor};
+      --#{$passphrase}-color-#{$colorKey}: #{$darkColor};
     }
     @else {
       @error "Can't found `#{$colorKey}` in $color-dark-map, please check _config.scss";

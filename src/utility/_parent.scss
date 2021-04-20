@@ -34,7 +34,7 @@
   }
 }
 
-@mixin parent-extend($class,$class-replace) {
+@mixin parent-replace($class,$class-replace) {
   @at-root #{selector-replace(&, '#{$class}', '#{$class-replace}')} {
     @content;
   }

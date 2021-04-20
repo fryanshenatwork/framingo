@@ -8,6 +8,7 @@
       $selector: str-slice($selector, 5, str-length($selector));
     }
     @if (
+      ($preferColor == 'Light') or
       ($preferColor == 'light') or
       ($preferColor == 'l') or
       ($preferColor == 'L')
@@ -22,6 +23,7 @@
       }
     }
     @else if (
+      ($preferColor == 'Dark') or
       ($preferColor == 'dark') or
       ($preferColor =='d') or
       ($preferColor =='D')
