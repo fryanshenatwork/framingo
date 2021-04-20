@@ -1,5 +1,3 @@
-@import '../config';
-
 @function color($colorKey: 'un', $theme: 'light') {
   $colorKey: $colorKey + '';
   $light-map: $color-light-map;

@@ -1,4 +1,3 @@
-@import '../config';
 @import '../utility/index';
 @import './animate';
 
@@ -28,11 +27,11 @@
   margin: -$sz/2;
   border-radius: 100%;
   border: 3px solid color(borderColor);
-  border-color: fade-out($color-light-borderColor, .5);
-  border-top-color: darken($color-light-borderColor, 5%);
+  border-color: fade-out(color(borderColor), .5);
+  border-top-color: darken(color(borderColor), 5%);
   @include dark {
-    border-color: $color-dark-borderColor;
-    border-top-color: fade-in($color-dark-borderColor, .2);
+    border-color: color(borderColor, d);
+    border-top-color: fade-in(color(borderColor, d), .2);
   }
   animation: fr-animate-rolling .7s linear infinite;
 }

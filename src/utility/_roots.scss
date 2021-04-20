@@ -1,5 +1,3 @@
-@import '../config';
-
 @mixin darkColor {
   @each $colorKey, $colorValue in $color-light-map {
     @if map-has-key($color-dark-map, $colorKey) {

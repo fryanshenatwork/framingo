@@ -54,3 +54,10 @@ $colors: (
     'borderColor': rgba(255, 255, 255, .1),
   )
 ) !default;
+
+$color-light-map: map-get($colors, 'light') !default;
+$color-dark-map: '' !default;
+
+@if map-has-key($colors, 'dark') {
+  $color-dark-map: map-get($colors, 'dark');
+}
