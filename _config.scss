@@ -1,0 +1,107 @@
+$color-red: #B03060;
+$color-orange: #FE9A76;
+$color-yellow: #FFD700;
+$color-olive: #32CD32;
+$color-green: #016936;
+$color-teal: #008080;
+$color-blue: #0E6EB8;
+$color-violet: #EE82EE;
+$color-purple: #B413EC;
+$color-pink: #FF1493;
+$color-brown: #A52A2A;
+$color-grey: #A0A0A0;
+$color-black: #000000;
+
+$color-un: #5AA3BF;
+$color-deux: #F2A81D;
+$color-trois: #731810;
+$color-quatre: #658791;
+$color-cinq: purple;
+
+
+$color-light-background: rgb(255, 254, 250);
+$color-light-font: rgb(80, 80, 80);
+$color-light-firstLayerBackground: mix($color-light-background, black, 90%);
+$color-light-borderColor: rgb(200, 200, 200);
+
+$color-dark-background: rgb(19, 29, 36);
+$color-dark-font: rgba(255, 255, 255, .85);
+$color-dark-firstLayerBackground: mix($color-dark-background, white, 97%);
+$color-dark-borderColor: rgba(255, 255, 255, .1);
+
+$colors: (
+  'light': (
+    'orange': $color-orange,
+    'yellow': $color-yellow,
+    'olive': $color-olive,
+    'green': $color-green,
+    'teal': $color-teal,
+    'blue': $color-blue,
+    'violet': $color-violet,
+    'purple': $color-purple,
+    'pink': $color-pink,
+    'brown': $color-brown,
+    'grey': $color-grey,
+    'black': $color-black,
+    // following items are required
+    'font': $color-light-font,
+    'background': $color-light-background,
+    'contentBackground': $color-light-firstLayerBackground,
+    'borderColor': $color-light-borderColor,
+  ),
+  'dark': (
+    'orange': $color-orange,
+    'yellow': $color-yellow,
+    'olive': $color-olive,
+    'green': $color-green,
+    'teal': $color-teal,
+    'blue': $color-blue,
+    'violet': $color-violet,
+    'purple': $color-purple,
+    'pink': $color-pink,
+    'brown': $color-brown,
+    'grey': $color-grey,
+    'black': $color-black,
+    // following items are required
+    'font': $color-dark-font,
+    'background': $color-dark-background,
+    'contentBackground': $color-dark-firstLayerBackground,
+    'borderColor': $color-dark-borderColor,
+  )
+) !default;
+
+$color-light-map: map-get($colors, 'light') !default;
+$color-dark-map: '' !default;
+
+@if map-has-key($colors, 'dark') {
+  $color-dark-map: map-get($colors, 'dark');
+}
+
+$breakpoint-map: (
+  'xs': 320, // custom
+  'sm': 576, // extend bootstrap4
+  'md': 768, // extend bootstrap4
+  'lg': 992, // extend bootstrap4
+  'xl': 1200, // extend bootstrap4
+  'xxl': 1440, // custom
+  'xxxl': 1600
+) !default;
+
+$spacing-map: (
+  '1': .35rem,
+  '2': .8rem,
+  '3': 1.25rem,
+  '4': 1.7rem,
+  '5': 2.15rem
+);
+
+$settings: (
+  'inputHeight': 2.3em,
+  'inputPadding': .3em .5em,
+  'inputPaddingLg': .5em .8em,
+  'inputRadius': .3rem,
+  'inputBorderWidth': 1px,
+  'inputBorderColor': var(--fr-color-borderColor),
+);
+
+$passphrase: 'fr';

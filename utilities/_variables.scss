@@ -1,0 +1,97 @@
+@import '../config';
+@import '../varify/index';
+
+@function color($colorKey: 'un', $theme: 'light') {
+  $colorKey: $colorKey + '';
+  $light-map: $color-light-map;
+  $dark-map: $color-dark-map;
+
+  $map: '';
+  @if ($theme == 'light' or $theme == 'l') {
+    $map: $light-map;
+  }
+  @else if ($theme == 'dark' or $theme == 'd') {
+    $map: $dark-map;
+  }
+  @if map-has-key($map, $colorKey) {
+    @return map-get($map, $colorKey);
+  } @else {
+    @error '
+
+
+      Can\'t find key `#{$colorKey}` in `#{$theme}` colors map] - ,
+      here\'s avaliabe key can be use\:
+      #{map-keys($map)}
+
+
+
+      ';
+    @return '';
+  }
+}
+
+@function breakpoint($breakpoint: 'md') {
+  $breakpoint: $breakpoin + '';
+  $map: $breakpoint-map;
+  @if map-has-key($map, $breakpoint) {
+    @return map-get($map, $breakpoint);
+  } @else {
+    @error '
+
+
+      Can\'t find  key `#{$breakpoint}` in breakpoint map,
+      here\'s avaliabe key can be use\:
+      #{map-keys($map)}
+
+
+
+    ';
+    @return '';
+  }
+}
+
+$breakpoint-xs: var(--fr-breakpoint-xs);
+$breakpoint-sm: var(--fr-breakpoint-sm);
+$breakpoint-md: var(--fr-breakpoint-md);
+$breakpoint-lg: var(--fr-breakpoint-lg);
+$breakpoint-xl: var(--fr-breakpoint-xl);
+$breakpoint-xxl: var(--fr-breakpoint-xxl);
+$breakpoint-xxxl: var(--fr-breakpoint-xxxl);
+
+@function spacing($spaceKey: '1') {
+  $spaceKey: $spaceKey + '';
+  $map: $spacing-map;
+  @if map-has-key($map, $spaceKey) {
+    @return map-get($map, $spaceKey);
+  } @else {
+    @error '
+
+
+      Can\'t find key `#{$spaceKey}` in spacing map,
+      here\'s avaliabe key can be use\:
+      #{map-keys($map)}
+
+
+
+    ';
+    @return '';
+  }
+}
+
+@function setting($theSize: 'un') {
+  $map: $settings;
+  @if map-has-key($map, $theSize) {
+    @return map-get($map, $theSize);
+  } @else {
+    @error '
+
+
+      Can\'t find key `#{$theSize}` in setting map,
+      here\'s avaliabe key can be use\:
+      #{map-keys($map)}
+
+
+      ';
+    @return '';
+  }
+};

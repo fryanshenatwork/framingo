@@ -1,0 +1,120 @@
+@import '../config';
+@import '../utilities/variables';
+@import './loading';
+
+.#{$passphrase} {
+  &.form {
+    position: relative;
+    display: block;
+    margin: spacing(1) auto spacing(3) auto;
+
+    &.loading,
+    &[data-submitting='true'] {
+      &:before {
+        content: '';
+        @extend %fr-loading-background;
+      }
+      &:after {
+        content: '';
+        @extend %fr-loading-circle;
+      }
+    }
+
+    .form-group {
+      margin-bottom: spacing(1);
+    }
+    .title {
+      line-height: setting(inputHeight);
+    }
+    %input-common {
+      display: block;
+      width: 100%;
+      min-height: setting(inputHeight);
+      height: auto;
+      box-sizing: border-box;
+      border-radius: setting(inputRadius);
+    }
+    %input-border {
+      border: setting(inputBorderWidth) solid setting(inputBorderColor);
+      outline: 0;
+      @include light {
+        border-color: $color-light-borderColor;
+        &:hover, &:active, &:focus {
+          border-color: darken($color-light-borderColor, 8%);
+        }
+      }
+      @include dark {
+        border-color: $color-dark-borderColor;
+        &:hover, &:active, &:focus {
+          border-color: fade-in($color-dark-borderColor, .08);
+        }
+      }
+    }
+    %input-padding {
+      padding: setting(inputPadding);
+    }
+    %input-disabled {
+      &:disabled {
+        opacity: .5;
+      }
+    }
+
+    label {
+      @extend %input-common;
+      @extend %input-border;
+      line-height: 1.2em;
+      padding: setting(inputPaddingLg);
+      cursor: pointer;
+      &:not(:first-child) {
+        margin-top: spacing(1);
+      }
+      input:disabled ~ span {
+        opacity: .5;
+      }
+    }
+    // label.upload#{$passphrase}{
+    // }
+    input[type='text'],
+    input[type='number'],
+    input[type='email'],
+    input[type='tel'],
+    input[type='url'],
+    input[type='password'],
+    input[type='search'],
+    input[type='week'],
+    input[type='month'],
+    input[type='date'],
+    input[type='time'] {
+      @extend %input-common;
+      @extend %input-padding;
+      @extend %input-border;
+      &:disabled {
+        @extend %input-disabled;
+        cursor: not-allowed;
+      }
+    }
+    input[type='range'] {
+      @extend %input-common;
+    }
+    input[type='radio'],
+    input[type='checkbox'] {
+      position: relative;
+      margin-right: spacing(1);
+      top: .1em;
+    }
+    input[type='file'] {
+      display: none;
+    }
+    select {
+      @extend %input-common;
+      @extend %input-border;
+      height: setting(inputHeight);
+    }
+    textarea {
+      @extend %input-common;
+      @extend %input-border;
+      padding: setting(inputPaddingLg);
+      min-height: 8em;
+    }
+  }
+}

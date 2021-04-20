@@ -1,0 +1,78 @@
+@import '../config';
+@import '../utilities/index';
+
+.#{$passphrase}.table {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: spacing(1) auto spacing(5) auto;
+  overflow-x: auto;
+  overflow-y: visible;
+  border-radius: 0;
+  -webkit-overflow-scrolling: touch;
+  // border: 1px solid color(borderColor);
+  @include light {
+    border-color: color(borderColor);
+  }
+  @include dark {
+    border-color: color(borderColor, d);
+  }
+
+  $tdPadding: spacing(1) spacing(2);
+  $lightBackground: rgba(0, 0, 0, .1);
+  $darkBackground: rgba(255, 255, 255, .04);
+  table {
+    width: 100%;
+    min-width: 800px;
+    border: 1px solid transparent;
+    background: $darkBackground;
+  }
+  td {
+    padding: $tdPadding;
+    min-width: 3em;
+    vertical-align: middle;
+  }
+  thead {
+    width: 100%;
+    tr {
+      th {
+        padding: $tdPadding;
+        padding-top: spacing(2);
+        padding-bottom: spacing(2);
+        border: 1px solid transparent;
+        font-size: 1em;
+        font-weight: normal;
+        @include light {
+          border-top-color: color(borderColor);
+          border-bottom-color: color(borderColor);
+        }
+        @include dark {
+          border-top-color: color(borderColor, d);
+          border-bottom-color: color(borderColor, d);
+        }
+      }
+    }
+  }
+  tbody {
+    width: 100%;
+    tr {
+      &:hover {
+        background-color: rgba(0, 0, 0, .03);
+      }
+      td {
+        border: 1px solid transparent;
+        padding-top: spacing(2);
+        padding-bottom: spacing(2);
+        @include light {
+          border-bottom-color: color(borderColor);
+        }
+        @include dark {
+          border-bottom-color: color(borderColor, d);
+        }
+      }
+      &:last-child td {
+        border-bottom-color: transparent;
+      }
+    }
+  }
+}
