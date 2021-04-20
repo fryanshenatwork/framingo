@@ -1,5 +1,4 @@
 @import '../config';
-@import '../varify/index';
 
 @function color($colorKey: 'un', $theme: 'light') {
   $colorKey: $colorKey + '';
