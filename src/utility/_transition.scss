@@ -2,6 +2,6 @@
   transition: $ease;
 }
 
-%transition {
+.#{$passphrase}-transition {
   @include transition;
 }

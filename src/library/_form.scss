@@ -11,11 +11,11 @@
     &[data-submitting='true'] {
       &:before {
         content: '';
-        @extend %#{$passphrase}-loading-background;
+        @extend .#{$passphrase}-loading-background;
       }
       &:after {
         content: '';
-        @extend %#{$passphrase}-loading-circle;
+        @extend .#{$passphrase}-loading-circle;
       }
     }
 
@@ -25,42 +25,10 @@
     .title {
       line-height: setting(inputHeight);
     }
-    %#{$passphrase}-input-common {
-      display: block;
-      width: 100%;
-      min-height: setting(inputHeight);
-      height: auto;
-      box-sizing: border-box;
-      border-radius: setting(inputRadius);
-    }
-    %#{$passphrase}-input-border {
-      border: setting(inputBorderWidth) solid transparent;
-      outline: 0;
-      @include light {
-        border-color: color(borderColor);
-        &:hover, &:active, &:focus {
-          border-color: darken(color(borderColor), 8%);
-        }
-      }
-      @include dark {
-        border-color: color(borderColor, d);
-        &:hover, &:active, &:focus {
-          border-color: fade-in(color(borderColor, d), .08);
-        }
-      }
-    }
-    %#{$passphrase}-input-padding {
-      padding: setting(inputPadding);
-    }
-    %#{$passphrase}-input-disabled {
-      &:disabled {
-        opacity: .5;
-      }
-    }
 
     label {
-      @extend %#{$passphrase}-input-common;
-      @extend %#{$passphrase}-input-border;
+      @extend .#{$passphrase}-input-common;
+      @extend .#{$passphrase}-input-border;
       line-height: 1.2em;
       padding: setting(inputPaddingLg);
       cursor: pointer;
@@ -84,16 +52,16 @@
     input[type='month'],
     input[type='date'],
     input[type='time'] {
-      @extend %#{$passphrase}-input-common;
-      @extend %#{$passphrase}-input-padding;
-      @extend %#{$passphrase}-input-border;
+      @extend .#{$passphrase}-input-common;
+      @extend .#{$passphrase}-input-padding;
+      @extend .#{$passphrase}-input-border;
       &:disabled {
-        @extend %#{$passphrase}-input-disabled;
+        @extend .#{$passphrase}-input-disabled;
         cursor: not-allowed;
       }
     }
     input[type='range'] {
-      @extend %#{$passphrase}-input-common;
+      @extend .#{$passphrase}-input-common;
     }
     input[type='radio'],
     input[type='checkbox'] {
@@ -105,15 +73,48 @@
       display: none;
     }
     select {
-      @extend %#{$passphrase}-input-common;
-      @extend %#{$passphrase}-input-border;
+      @extend .#{$passphrase}-input-common;
+      @extend .#{$passphrase}-input-border;
       height: setting(inputHeight);
     }
     textarea {
-      @extend %#{$passphrase}-input-common;
-      @extend %#{$passphrase}-input-border;
+      @extend .#{$passphrase}-input-common;
+      @extend .#{$passphrase}-input-border;
       padding: setting(inputPaddingLg);
       min-height: 8em;
     }
+  }
+}
+
+.#{$passphrase}-input-common {
+  display: block;
+  width: 100%;
+  min-height: setting(inputHeight);
+  height: auto;
+  box-sizing: border-box;
+  border-radius: setting(inputRadius);
+}
+.#{$passphrase}-input-border {
+  border: setting(inputBorderWidth) solid transparent;
+  outline: 0;
+  @include light {
+    border-color: color(borderColor);
+    &:hover, &:active, &:focus {
+      border-color: darken(color(borderColor), 8%);
+    }
+  }
+  @include dark {
+    border-color: color(borderColor, d);
+    &:hover, &:active, &:focus {
+      border-color: fade-in(color(borderColor, d), .08);
+    }
+  }
+}
+.#{$passphrase}-input-padding {
+  padding: setting(inputPadding);
+}
+.#{$passphrase}-input-disabled {
+  &:disabled {
+    opacity: .5;
   }
 }

@@ -1,7 +1,7 @@
 @import '../utility/index';
 @import './animate';
 
-%#{$passphrase}-loading-background {
+.#{$passphrase}-loading-background {
   position: absolute;
   top: 0;
   left: 0;
@@ -15,7 +15,7 @@
   }
 }
 
-%#{$passphrase}-loading-circle {
+.#{$passphrase}-loading-circle {
   $sz: 3em;
   position: absolute;
   z-index: 1;
