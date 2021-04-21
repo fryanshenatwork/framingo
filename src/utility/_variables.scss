@@ -28,7 +28,7 @@
 }
 
 @function breakpoint($breakpoint: 'md') {
-  $breakpoint: $breakpoin + '';
+  $breakpoint: $breakpoint + '';
   $map: $breakpoint-map;
   @if map-has-key($map, $breakpoint) {
     @return map-get($map, $breakpoint);
