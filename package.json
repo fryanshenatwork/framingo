@@ -1,12 +1,12 @@
 {
   "name": "framingo",
-  "version": "0.0.6",
+  "version": "1.0.0",
   "description": "A scss pack named framingo",
   "main": "src/index.scss",
   "dependencies": {},
   "devDependencies": {},
   "scripts": {
-    "gitTag": "git add package*.json ; git commit -m \"$npm_package_name-v$npm_package_version\"; git tag $npm_package_name-v$npm_package_version",
+    "gitTag": "git add package*.json ; git commit -m \"$npm_package_version\"; git tag $npm_package_version",
     "version:patch": "npm version patch --no-git-tag-version;git st; npm run gitTag",
     "version:minor": "npm version minor --no-git-tag-version;git st; npm run gitTag",
     "version:major": "npm version major --no-git-tag-version;git st; npm run gitTag"
