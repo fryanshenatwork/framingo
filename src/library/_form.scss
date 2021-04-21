@@ -11,11 +11,11 @@
     &[data-submitting='true'] {
       &:before {
         content: '';
-        @extend %fr-loading-background;
+        @extend %#{$passphrase}-loading-background;
       }
       &:after {
         content: '';
-        @extend %fr-loading-circle;
+        @extend %#{$passphrase}-loading-circle;
       }
     }
 
@@ -25,7 +25,7 @@
     .title {
       line-height: setting(inputHeight);
     }
-    %input-common {
+    %#{$passphrase}-input-common {
       display: block;
       width: 100%;
       min-height: setting(inputHeight);
@@ -33,7 +33,7 @@
       box-sizing: border-box;
       border-radius: setting(inputRadius);
     }
-    %input-border {
+    %#{$passphrase}-input-border {
       border: setting(inputBorderWidth) solid transparent;
       outline: 0;
       @include light {
@@ -49,18 +49,18 @@
         }
       }
     }
-    %input-padding {
+    %#{$passphrase}-input-padding {
       padding: setting(inputPadding);
     }
-    %input-disabled {
+    %#{$passphrase}-input-disabled {
       &:disabled {
         opacity: .5;
       }
     }
 
     label {
-      @extend %input-common;
-      @extend %input-border;
+      @extend %#{$passphrase}-input-common;
+      @extend %#{$passphrase}-input-border;
       line-height: 1.2em;
       padding: setting(inputPaddingLg);
       cursor: pointer;
@@ -84,16 +84,16 @@
     input[type='month'],
     input[type='date'],
     input[type='time'] {
-      @extend %input-common;
-      @extend %input-padding;
-      @extend %input-border;
+      @extend %#{$passphrase}-input-common;
+      @extend %#{$passphrase}-input-padding;
+      @extend %#{$passphrase}-input-border;
       &:disabled {
-        @extend %input-disabled;
+        @extend %#{$passphrase}-input-disabled;
         cursor: not-allowed;
       }
     }
     input[type='range'] {
-      @extend %input-common;
+      @extend %#{$passphrase}-input-common;
     }
     input[type='radio'],
     input[type='checkbox'] {
@@ -105,13 +105,13 @@
       display: none;
     }
     select {
-      @extend %input-common;
-      @extend %input-border;
+      @extend %#{$passphrase}-input-common;
+      @extend %#{$passphrase}-input-border;
       height: setting(inputHeight);
     }
     textarea {
-      @extend %input-common;
-      @extend %input-border;
+      @extend %#{$passphrase}-input-common;
+      @extend %#{$passphrase}-input-border;
       padding: setting(inputPaddingLg);
       min-height: 8em;
     }
